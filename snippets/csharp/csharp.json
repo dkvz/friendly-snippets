@@ -39,16 +39,6 @@
     ],
     "description": "Checked block"
   },
-  "Class": {
-    "prefix": "class",
-    "body": [
-      "class ${1:Name}",
-      "{",
-      "    $0",
-      "}"
-    ],
-    "description": "Class"
-  },
   "Console.WriteLine": {
     "prefix": "cw",
     "body": [
@@ -62,36 +52,6 @@
       "Console.ReadLine($0);"
     ],
     "description": "Console.ReadLine"
-  },
-  "do...while loop": {
-    "prefix": "do",
-    "body": [
-      "do",
-      "{",
-      "    $0",
-      "} while (${1:true});"
-    ],
-    "description": "do...while loop"
-  },
-  "Else statement": {
-    "prefix": "else",
-    "body": [
-      "else",
-      "{",
-      "    $0",
-      "}"
-    ],
-    "description": "Else statement"
-  },
-  "Enum": {
-    "prefix": "enum",
-    "body": [
-      "enum ${1:Name}",
-      "{",
-      "    $0",
-      "}"
-    ],
-    "description": "Enum"
   },
   "Implementing Equals() according to guidelines": {
     "prefix": "equals",
@@ -152,67 +112,6 @@
     ],
     "description": "Foreach statement"
   },
-  "Reverse for loop": {
-    "prefix": "forr",
-    "body": [
-      "for (int ${1:i} = ${2:length} - 1; ${1:i} >= 0 ; ${1:i}--)",
-      "{",
-      "    $0",
-      "}"
-    ],
-    "description": "Reverse for loop"
-  },
-  "for loop": {
-    "prefix": "for",
-    "body": [
-      "for (int ${1:i} = 0; ${1:i} < ${2:length}; ${1:i}++)",
-      "{",
-      "    $0",
-      "}"
-    ],
-    "description": "for loop"
-  },
-  "if statement": {
-    "prefix": "if",
-    "body": [
-      "if (${1:true})",
-      "{",
-      "    $0",
-      "}"
-    ],
-    "description": "if statement"
-  },
-  "else-if statement": {
-    "prefix": "else if",
-    "body": [
-      "else if (${1:true})",
-      "{",
-      "    $0",
-      "}"
-    ],
-    "description": "else-if statement"
-  },
-  "Indexer": {
-    "prefix": "indexer",
-    "body": [
-      "${1:public} ${2:object} this[${3:int} index]",
-      "{",
-      "    get { $4 }",
-      "    set { $0 }",
-      "}"
-    ],
-    "description": "Indexer"
-  },
-  "Interface": {
-    "prefix": "interface",
-    "body": [
-      "interface I${1:Name}",
-      "{",
-      "    $0",
-      "}"
-    ],
-    "description": "Interface"
-  },
   "Safely invoking an event": {
     "prefix": "invoke",
     "body": [
@@ -235,98 +134,12 @@
     ],
     "description": "Simple iterator"
   },
-  "Named iterator/indexer pair using a nested class": {
-    "prefix": "iterindex",
-    "body": [
-      "public ${1:Name}Iterator ${1:Name}",
-      "{",
-      "    get",
-      "    {",
-      "        return new ${1:Name}Iterator(this);",
-      "    }",
-      "}",
-      "",
-      "public class ${1:Name}Iterator",
-      "{",
-      "    readonly ${2:ClassName} outer;",
-      "    ",
-      "    internal ${1:Name}Iterator(${2:ClassName} outer)",
-      "    {",
-      "        this.outer = outer;",
-      "    }",
-      "    ",
-      "    // TODO: provide an appropriate implementation here",
-      "    public int Length { get { return 1; } }",
-      "    ",
-      "    public ${3:ElementType} this[int index]",
-      "    {",
-      "        get",
-      "        {",
-      "            //",
-      "            // TODO: implement indexer here",
-      "            //",
-      "            // you have full access to ${2:ClassName} privates",
-      "            //",
-      "            ${4:throw new System.NotImplementedException();}",
-      "            return default(${3:ElementType});",
-      "        }",
-      "    }",
-      "    ",
-      "    public System.Collections.Generic.IEnumerator<${3:ElementType}> GetEnumerator()",
-      "    {",
-      "        for (int i = 0; i < this.Length; i++)",
-      "        {",
-      "            yield return this[i];",
-      "        }",
-      "    }",
-      "}"
-    ],
-    "description": "Named iterator/indexer pair using a nested class"
-  },
-  "Lock statement": {
-    "prefix": "lock",
-    "body": [
-      "lock (${1:this})",
-      "{",
-      "    $0",
-      "}"
-    ],
-    "description": "Lock statement"
-  },
   "MessageBox.Show": {
     "prefix": "mbox",
     "body": [
       "System.Windows.Forms.MessageBox.Show(\"${1:Text}\");$0"
     ],
     "description": "MessageBox.Show"
-  },
-  "Namespace": {
-    "prefix": "namespace",
-    "body": [
-      "namespace ${1:Name}",
-      "{",
-      "    $0",
-      "}"
-    ],
-    "description": "Namespace"
-  },
-  "#if": {
-    "prefix": "ifd",
-    "body": [
-      "#if ${1:true}",
-      "    $0",
-      "#endif"
-    ],
-    "description": "#if"
-  },
-  "#region": {
-    "prefix": "region",
-    "body": [
-      "#region ${1:Name}",
-      "    $0",
-      "#endregion"
-    ],
-    "description": "#region"
   },
   "Property and backing field": {
     "prefix": "propfull",
@@ -354,37 +167,6 @@
       "public ${1:int} ${2:MyProperty} { get; set; }$0"
     ],
     "description": "An automatically implemented property. C# 3.0 or higher"
-  },
-  "sim": {
-    "prefix": "sim",
-    "body": [
-      "static int Main(string[] args)",
-      "{",
-      "    $0",
-      "    return 0;",
-      "}"
-    ],
-    "description": "int Main()"
-  },
-  "Struct": {
-    "prefix": "struct",
-    "body": [
-      "struct ${1:Name}",
-      "{",
-      "    $0",
-      "}"
-    ],
-    "description": "Struct"
-  },
-  "svm": {
-    "prefix": "svm",
-    "body": [
-      "static void Main(string[] args)",
-      "{",
-      "    $0",
-      "}"
-    ],
-    "description": "void Main()"
   },
   "Switch statement": {
     "prefix": "switch",
@@ -426,46 +208,6 @@
     ],
     "description": "Try catch"
   },
-  "Unchecked block": {
-    "prefix": "unchecked",
-    "body": [
-      "unchecked",
-      "{",
-      "    $0",
-      "}"
-    ],
-    "description": "Unchecked block"
-  },
-  "Unsafe statement": {
-    "prefix": "unsafe",
-    "body": [
-      "unsafe",
-      "{",
-      "    $0",
-      "}"
-    ],
-    "description": "Unsafe statement"
-  },
-  "Using statement": {
-    "prefix": "using",
-    "body": [
-      "using (${1:resource})",
-      "{",
-      "    $0",
-      "}"
-    ],
-    "description": "Using statement"
-  },
-  "While loop": {
-    "prefix": "while",
-    "body": [
-      "while (${1:true})",
-      "{",
-      "    $0",
-      "}"
-    ],
-    "description": "While loop"
-  },
   "constructor": {
     "prefix": "ctor",
     "body": [
@@ -490,35 +232,5 @@
       "}$0"
     ],
     "description": "create xunit test method"
-  },
-  "Creates a Method structure": {
-    "prefix": "method",
-    "body": [
-      "${1:public} ${2:void} ${3:MyMethod}(${4:string} ${5:parameter})",
-      "{",
-      "\t$0",
-      "}"
-    ],
-    "description": "Creates a Method structure"
-  },
-  "Creates an Async Method structure": {
-    "prefix": "method_async",
-    "body": [
-      "${1:public} async ${2:Task}<${3:object}> ${4:MyMethodAsync}(${5:string} ${6:parameter})",
-      "{",
-      "\t$0",
-      "}"
-    ],
-    "description": "Creates an async Method structure"
-  },
-  "cls": {
-    "prefix": "cls",
-    "body": [
-      "${1:public} class ${2:$TM_FILENAME_BASE}",
-      "{",
-      "\t$0",
-      "}"
-    ],
-    "description": "Create new class"
   }
 }

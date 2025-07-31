@@ -1,25 +1,4 @@
 {
-  "import": {
-    "prefix": "import",
-    "body": [
-      "import $1 from '$2'"
-    ],
-    "description": "import ... from ..."
-  },
-  "import-type": {
-    "prefix": "importType",
-    "body": [
-      "import type {$1} from '$2'"
-    ],
-    "description": "import type ... from ..."
-  },
-  "nextTick": {
-    "prefix": "nextTick",
-    "body": [
-      "nextTick()"
-    ],
-    "description": "A utility for waiting for the next DOM update flush."
-  },
   "defineProps": {
     "prefix": "defineProps",
     "body": [
@@ -92,26 +71,6 @@
     ],
     "description": "create a custom element vue"
   },
-  "data-options": {
-    "prefix": "data",
-    "body": [
-      "data() {",
-      "\treturn {",
-      "\t\t$1",
-      "\t}",
-      "},$0"
-    ],
-    "description": "The data object for the Vue instance."
-  },
-  "computed-options": {
-    "prefix": "computed",
-    "body": [
-      "computed: {",
-      "\t$1",
-      "},$0"
-    ],
-    "description": "Computed properties to be mixed into the Vue instance. "
-  },
   "computed-composition": {
     "prefix": "computedVue",
     "body": [
@@ -170,37 +129,6 @@
     ],
     "description": "Shallow version of readonly(). Use with Caution !! Shallow data structures should only be used for root level state in a component. Avoid nesting it inside a deep reactive object as it creates a tree with inconsistent reactivity behavior which can be difficult to understand and debug."
   },
-  "toRaw": {
-    "prefix": "toRaw()",
-    "body": [
-      "toRaw($0)"
-    ],
-    "description": "Returns the raw, original object of a Vue-created proxy."
-  },
-  "effectScope": {
-    "prefix": "effectScope()",
-    "body": [
-      "const $1 = effectScope()",
-      "$0"
-    ],
-    "description": "Returns the current active effect scope if there is one."
-  },
-  "getCurrentScope": {
-    "prefix": "getCurrentScope",
-    "body": [
-      "const $1 = getCurrentScope()",
-      "$0"
-    ],
-    "description": "Returns the current active effect scope if there is one."
-  },
-  "onScopeDispose": {
-    "prefix": "onScopeDispose()",
-    "body": [
-      "const $1 = onScopeDispose()",
-      "$0"
-    ],
-    "description": "Registers a dispose callback on the current active effect scope. The callback will be invoked when the associated effect scope is stopped."
-  },
   "ref-composition": {
     "prefix": "refVue",
     "body": [
@@ -231,24 +159,6 @@
     ],
     "description": "Template ref to be mixed into the Vue instance. "
   },
-  "methods-options": {
-    "prefix": "methods",
-    "body": [
-      "methods: {",
-      "\t$1",
-      "},$0"
-    ],
-    "description": "Methods to be mixed into the Vue instance."
-  },
-  "function": {
-    "prefix": "functionVue3",
-    "body": [
-      "const $1 = ($2) => {",
-      "$0",
-      "};"
-    ],
-    "description": "Method composition properties to be mixed into the Vue instance. "
-  },
   "watch": {
     "prefix": "watch",
     "body": [
@@ -257,25 +167,6 @@
       "});"
     ],
     "description": "Watch over a reactive source and call a function in reaction to state changes "
-  },
-  "watchEffect-composition": {
-    "prefix": "watchEffect",
-    "body": [
-      "watchEffect($1, ($2, $3) => {",
-      "$0",
-      "});"
-    ],
-    "description": "watchEffect from vue composition "
-  },
-  "stoppingWatcher": {
-    "prefix": "stopWatcher",
-    "body": [
-      "setTimeout(() => {",
-      "\twatchEffect(() => {})",
-      "}, ${1:100})",
-      "$0"
-    ],
-    "description": "Stopping a Watcher vue"
   },
   "onBeforeMount": {
     "prefix": "onBeforeMount",
@@ -387,47 +278,6 @@
     ],
     "description": "Type: Function."
   },
-  "errorCaptured": {
-    "prefix": "errorCaptured",
-    "body": [
-      "errorCaptured: (err, vm, info) => {",
-      "\t$1",
-      "},"
-    ],
-    "description": "Type: (err: Error, vm: Component, info: string) => ?boolean"
-  },
-  "createRenderer": {
-    "prefix": "createRenderer",
-    "body": [
-      "createRenderer({",
-      "\t$1",
-      "})"
-    ],
-    "description": "createRenderer({ })"
-  },
-  "importVueRouter": {
-    "prefix": "importVueRouter",
-    "body": [
-      "import VueRouter from 'vue-router'"
-    ],
-    "description": "import VueRouter from 'vue-router'"
-  },
-  "importuseRouter-composition": {
-    "prefix": "importuseRouter",
-    "body": [
-      "import useRouter from 'vue-router'"
-    ],
-    "description": "import useRouter from 'vue-router'"
-  },
-  "newVueRouter": {
-    "prefix": "newVueRouter",
-    "body": [
-      "const ${1:router} = new VueRouter({",
-      "\t$2",
-      "})$0"
-    ],
-    "description": "const router = newVueRouter({ })"
-  },
   "useRouter-composition": {
     "prefix": "useRouter",
     "body": [
@@ -441,110 +291,6 @@
       "const ${1:route} = useRoute()"
     ],
     "description": "const route = useRoute()"
-  },
-  "routerBeforeEach": {
-    "prefix": "routerBeforeEach",
-    "body": [
-      "${1:router}.beforeEach((to, from, next) => {",
-      "\t${2:// to and from are both route objects. must call `next`.}",
-      "})$0"
-    ],
-    "description": "router.beforeEach"
-  },
-  "routerBeforeResolve": {
-    "prefix": "routerBeforeResolve",
-    "body": [
-      "${1:router}.beforeResolve((to, from, next) => {",
-      "\t${2:// to and from are both route objects. must call `next`.}",
-      "})$0"
-    ],
-    "description": "router.beforeResolve"
-  },
-  "routerAfterEach": {
-    "prefix": "routerAfterEach",
-    "body": [
-      "${1:router}.afterEach((to, from) => {",
-      "\t${2:// to and from are both route objects.}",
-      "})$0"
-    ],
-    "description": "router.afterEach"
-  },
-  "routerPush": {
-    "prefix": "routerPush",
-    "body": [
-      "${1:router}.push($2)$0"
-    ],
-    "description": "router.push()"
-  },
-  "routerReplace": {
-    "prefix": "routerReplace",
-    "body": [
-      "${1:router}.replace($2)$0"
-    ],
-    "description": "router.replace()"
-  },
-  "routerGo": {
-    "prefix": "routerGo",
-    "body": [
-      "${1:router}.go($2)$0"
-    ],
-    "description": "router.go()"
-  },
-  "routerBack": {
-    "prefix": "routerBack",
-    "body": [
-      "${1:router}.back($2)$0"
-    ],
-    "description": "router.back()"
-  },
-  "routerForward": {
-    "prefix": "routerForward",
-    "body": [
-      "${1:router}.forward($2)$0"
-    ],
-    "description": "router.forward()"
-  },
-  "routerGetMatchedComponents": {
-    "prefix": "routerGetMatchedComponents",
-    "body": [
-      "${1:router}.getMatchedComponents($2)$0"
-    ],
-    "description": "router.getMatchedComponents()"
-  },
-  "routerResolve": {
-    "prefix": "routerResolve",
-    "body": [
-      "${1:router}.resolve($2)$0"
-    ],
-    "description": "router.resolve()"
-  },
-  "routerAddRoutes": {
-    "prefix": "routerAddRoutes",
-    "body": [
-      "${1:router}.addRoutes($2)$0"
-    ],
-    "description": "router.addRoutes()"
-  },
-  "routerOnReady": {
-    "prefix": "routerOnReady",
-    "body": [
-      "${1:router}.onReady($2)$0"
-    ],
-    "description": "router.onReady()"
-  },
-  "routerOnError": {
-    "prefix": "routerOnError",
-    "body": [
-      "${1:router}.onError($2)$0"
-    ],
-    "description": "router.onError()"
-  },
-  "routes": {
-    "prefix": "routes",
-    "body": [
-      "routes: [$1]$0"
-    ],
-    "description": "routes: []"
   },
   "beforeEnter": {
     "prefix": "beforeEnter",
@@ -572,42 +318,5 @@
       "}"
     ],
     "description": "beforeRouteLeave (to, from, next) { }"
-  },
-  "scrollBehavior": {
-    "prefix": "scrollBehavior",
-    "body": [
-      "scrollBehavior (to, from, savedPosition) {",
-      "\t${1:// ...}",
-      "}"
-    ],
-    "description": "scrollBehavior (to, from, savedPosition) { }"
-  },
-  "onRenderTriggered-composition": {
-    "prefix": "onRenderTriggered",
-    "body": [
-      "onRenderTriggered(() => {$0})"
-    ],
-    "description": "Vue onRenderTriggered lifecycle hook"
-  },
-  "onErrorCaptured-composition": {
-    "prefix": "onErrorCaptured",
-    "body": [
-      "onErrorCaptured(() => {$0})"
-    ],
-    "description": "Vue oneErrorCaptured lifecycle hook"
-  },
-  "onRenderTracked-composition": {
-    "prefix": "onRenderTracked",
-    "body": [
-      "onRenderTracked(() => {$0})"
-    ],
-    "description": "Vue onRenderTracked lifecycle hook"
-  },
-  "onServerPrefetch-compositionSSR": {
-    "prefix": "onServerPrefetch",
-    "body": [
-      "onServerPrefetch(() => {$0})"
-    ],
-    "description": "Vue onServerPrefetch lifecycle hook SSR Only"
   }
 }

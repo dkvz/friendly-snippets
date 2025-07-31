@@ -1,4 +1,27 @@
 # Friendly Snippets
+Copy of the [original friendly-snippet repo](https://github.com/rafamadriz/friendly-snippets) with edited files, some of them removed.
+
+## Changelog (sort of)
+Trying to remember what I did.
+
+Removed many snippets:
+- csharp.json
+- frameworks/vue/script.json
+- frameworks/vue/style.json - Emptied
+- frameworks/vue/html.json
+- frameworks/vue/vue.json
+
+Removed completely:
+- fortran.json
+- cobol
+
+## TODO / To check
+- How to use loremipsum?
+- The empty frameworks/vue/style.json might cause errors
+
+---
+
+# Original README
 
 Snippets collection for a set of different programming languages.
 
