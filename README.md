@@ -18,6 +18,7 @@ Removed completely:
 ## TODO / To check
 - How to use loremipsum?
 - The empty frameworks/vue/style.json might cause errors
+- Does the plugin load faster with a lot less files in it?
 
 ---
 
